@@ -1,16 +1,53 @@
-# React + Vite
+# CSV Book Editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fast, responsive React app to **upload** a large CSV (~10,000 rows) or **generate** fake book data, then **view / edit / filter / sort** it in the browser and **download the edited CSV**.
 
-Currently, two official plugins are available:
+> **Live demo:** https://csv-book-editor-navy.vercel.app/  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Upload CSV** (10k+ rows) using PapaParse in **Web Worker** mode
+- **Generate 10k** fake book rows (no external faker deps)
+- **Inline editing** with **per-cell Undo** + highlights for **changed cells/rows**
+- **Per-column filters** (Title, Author, Genre, PublishedYear, ISBN)
+- **Click-to-sort** each column (numeric for year, lexicographic for text)
+- **Pagination** (50 / 100 / 200 / 500), with **row & page counters**
+- **Download Edited CSV**
+- **Reset All Edits** (revert to last upload/generation)
+- **Add / Delete rows**
+- **Column visibility** toggles
+- **Sticky table header**, alignment-safe with large datasets
+- **Responsive layout** for mobile & tablet
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Required CSV Format
+
+CSV **must** contain these headers (case-sensitive):
+
+
+No file? Click **Generate 10k Books** to create data instantly, or use **Download Sample CSV** from the UI.
+
+---
+
+## 🚀 Quick Start (Local)
+
+> Requires **Node.js 18+**
+
+```bash
+# 1) Install deps
+npm install
+
+# 2) Run dev server
+npm run dev
+# Open the printed URL (e.g., http://localhost:5173)
+
+# 3) Build for production
+npm run build
+
+# 4) Preview the production build locally
+npm run preview
+
+
