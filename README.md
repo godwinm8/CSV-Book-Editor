@@ -51,7 +51,6 @@ npm run build
 npm run preview
 
 
-```bash
 git add README.md
 git commit -m "docs: add Quick Start section"
 git push
